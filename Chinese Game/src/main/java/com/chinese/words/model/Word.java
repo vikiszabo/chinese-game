@@ -4,25 +4,25 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Table(name = "word")
 public class Word {
-    
+
+    @Id
     Integer id;
 
-    @Column(name = "chinese_meaning")
+   // @Column(name = "chinese_meaning")
     String chineseMeaning;
 
-    @Column(name = "english_meaning")
+//    @Column(name = "english_meaning")
     String englishMeaning;
 
 
-    List<Hanzi> hanzis;
+  //  List<Hanzi> hanzis;
 
 
-    public Word(String chineseMeaning, String englishMeaning, List<Hanzi> hanzis) {
+    public Word(String chineseMeaning, String englishMeaning/*, List<Hanzi> hanzis*/) {
         this.chineseMeaning = chineseMeaning;
         this.englishMeaning = englishMeaning;
-        this.hanzis = hanzis;
+       // this.hanzis = hanzis;
     }
 
     public Integer getId() {
@@ -32,7 +32,7 @@ public class Word {
     public void setId(Integer id) {
         this.id = id;
     }
-
+/*
     public List<Hanzi> getCharacters() {
         return hanzis;
     }
@@ -40,4 +40,6 @@ public class Word {
     public void setCharacters(List<Hanzi> hanzis) {
         this.hanzis = hanzis;
     }
+
+    */
 }

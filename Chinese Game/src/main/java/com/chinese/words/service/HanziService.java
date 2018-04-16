@@ -5,10 +5,12 @@ import com.chinese.words.model.Word;
 import com.chinese.words.repository.HanziRepository;
 import com.chinese.words.repository.WordRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Service
 public class HanziService {
 
     @Autowired
@@ -24,16 +26,16 @@ public class HanziService {
     }
 
     public void saveHanzi(String name, String pinyin, List<Word> words) {
-        Hanzi hanzi = new Hanzi(name, pinyin, words);
+        Hanzi hanzi = new Hanzi(name, pinyin);
         hanziRepository.save(hanzi);
     }
 
     public Hanzi findHanziById(Integer id){
         return hanziRepository.getOne(id);
     }
-
+/*
     public List<Hanzi> findHanzisByWord(Word word){
         return hanziRepository.findAllByWord(word);
     }
-
+*/
 }

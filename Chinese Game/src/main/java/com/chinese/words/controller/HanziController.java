@@ -1,23 +1,24 @@
 package com.chinese.words.controller;
 
 
-import com.chinese.words.model.Hanzi;
-import com.chinese.words.model.Word;
+import com.chinese.words.service.ChineseAppService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.web.bind.annotation.*;
 
 
-@Controller
+@RestController
+@EnableAutoConfiguration
 public class HanziController {
 
     @Autowired
-    Hanzi hanzi;
+    private ChineseAppService chineseAppService;
 
-    @Autowired
-    Word word;
-
+    @RequestMapping
+    @ResponseBody
+    String hello() {
+        return "Hello World! Spring boot is so simple.";
+    }
 
 
 

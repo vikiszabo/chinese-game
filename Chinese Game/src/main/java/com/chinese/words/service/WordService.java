@@ -5,9 +5,12 @@ import com.chinese.words.model.Word;
 import com.chinese.words.repository.HanziRepository;
 import com.chinese.words.repository.WordRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+
+@Service
 public class WordService {
 
     @Autowired
@@ -24,11 +27,11 @@ public class WordService {
     }
 
     public void saveWord(String chinese, String english, List<Hanzi> hanzis) {
-        Word word = new Word(chinese, english, hanzis);
+        Word word = new Word(chinese, english/*, hanzis*/);
     }
-    
+/*
     public List<Word> findAllByHanzi(Hanzi hanzi){
         return wordRepository.findAllByHanzi(hanzi);
     }
-
+*/
 }

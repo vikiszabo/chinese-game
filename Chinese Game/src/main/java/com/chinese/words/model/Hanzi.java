@@ -16,17 +16,16 @@ public class Hanzi {
 
     String pinyin;
 
-    List<Word> words;
+    //List<Word> words;
 
 
-    public Hanzi(String name, String pinyin, List<Word> words) {
-        this.id = id;
+    public Hanzi(String name, String pinyin) {
         this.name = name;
         this.pinyin = pinyin;
-        this.words = words;
+      //  this.words = words;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
@@ -50,11 +49,5 @@ public class Hanzi {
         this.pinyin = pinyin;
     }
 
-    public List<Word> getWords() {
-        return words;
-    }
 
-    public void setWords(List<Word> words) {
-        this.words = words;
-    }
 }

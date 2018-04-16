@@ -9,7 +9,7 @@ import java.util.List;
 public interface HanziRepository extends JpaRepository<Hanzi, Integer> {
 
 
-    List<Hanzi> findAllByWord(Word word);
+//    List<Hanzi> findAllByWord(Word word);
 
 
 }
