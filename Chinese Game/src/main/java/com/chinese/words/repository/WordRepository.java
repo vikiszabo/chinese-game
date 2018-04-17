@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface WordRepository extends JpaRepository<Word, Integer>{
 
-    //List<Word> findAllByHanzi(Hanzi hanzi);
+  //  List<Word> findAllByHanzi(Hanzi hanzi);
 
 
 }

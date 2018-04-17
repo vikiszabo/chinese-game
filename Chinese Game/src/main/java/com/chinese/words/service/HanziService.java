@@ -25,7 +25,7 @@ public class HanziService {
         this.wordRepository = wordRepository;
     }
 
-    public void saveHanzi(String name, String pinyin, List<Word> words) {
+    public void saveHanzi(String name, String pinyin) {
         Hanzi hanzi = new Hanzi(name, pinyin);
         hanziRepository.save(hanzi);
     }

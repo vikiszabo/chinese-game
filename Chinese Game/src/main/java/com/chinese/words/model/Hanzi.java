@@ -16,13 +16,23 @@ public class Hanzi {
 
     String pinyin;
 
-    //List<Word> words;
+    @ManyToMany(mappedBy = "hanzis")
+    List<Word> words;
 
+    public Hanzi(){};
 
     public Hanzi(String name, String pinyin) {
         this.name = name;
         this.pinyin = pinyin;
-      //  this.words = words;
+    }
+
+
+    public List<Word> getWords() {
+        return words;
+    }
+
+    public void setWords(List<Word> words) {
+        this.words = words;
     }
 
     public Integer getId() {
@@ -49,5 +59,13 @@ public class Hanzi {
         this.pinyin = pinyin;
     }
 
-
+    @Override
+    public String toString() {
+        return "Hanzi{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", pinyin='" + pinyin + '\'' +
+                ", words=" + words +
+                '}';
+    }
 }

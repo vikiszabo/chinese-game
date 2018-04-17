@@ -2,9 +2,11 @@ package com.chinese.words.service;
 
 import com.chinese.words.ChineseApp;
 import com.chinese.words.model.Hanzi;
+import com.chinese.words.model.Word;
 import org.springframework.stereotype.Component;
 
 import java.text.ParseException;
+import java.util.ArrayList;
 
 @Component
 public class CharacterInitializerBean {
@@ -13,13 +15,17 @@ public class CharacterInitializerBean {
 
         chineseAppService.saveHanzi("好","hao3");
         chineseAppService.saveHanzi("八", "ba1");
-        chineseAppService.saveHanzi("爱", "ai4" );
+        chineseAppService.saveHanzi("爱", "ai4");
         chineseAppService.saveHanzi("爸", "ba4");
         chineseAppService.saveHanzi("杯", "bei1");
         chineseAppService.saveHanzi("子", "zi");
         chineseAppService.saveHanzi("北", "bei3");
         chineseAppService.saveHanzi("京", "jing1");
-        chineseAppService.saveHanzi("本", "ben3");
+
+        chineseAppService.saveWord("ni3hao3", "hi");
+
+
+     /*   chineseAppService.saveHanzi("本", "ben3");
         chineseAppService.saveHanzi("不", "bu4");
         chineseAppService.saveHanzi("客", "ke4");
         chineseAppService.saveHanzi("气", "qi");
@@ -176,6 +182,21 @@ public class CharacterInitializerBean {
         chineseAppService.saveHanzi("服", "fu");
         chineseAppService.saveHanzi("医", "yi1");
         chineseAppService.saveHanzi("院", "yuan4");
+        chineseAppService.saveHanzi("椅", "yi3");
+        chineseAppService.saveHanzi("有", "you3");
+        chineseAppService.saveHanzi("月", "yue4");
+        chineseAppService.saveHanzi("再", "zai4");
+        chineseAppService.saveHanzi("怎", "zen3");
+        chineseAppService.saveHanzi("样", "yang4");
+        chineseAppService.saveHanzi("这", "zhe4");
+        chineseAppService.saveHanzi("中", "zhong1");
+        chineseAppService.saveHanzi("国", "guo2");
+        chineseAppService.saveHanzi("住", "zhu4");
+        chineseAppService.saveHanzi("桌", "zhuo1");
+        chineseAppService.saveHanzi("昨", "zuo2");
+        chineseAppService.saveHanzi("做", "zuo4");
+        chineseAppService.saveHanzi("坐", "zuo4"); */
+
     }
 
 }

@@ -26,8 +26,9 @@ public class WordService {
         this.wordRepository = wordRepository;
     }
 
-    public void saveWord(String chinese, String english, List<Hanzi> hanzis) {
-        Word word = new Word(chinese, english/*, hanzis*/);
+    public void saveWord(String chinese, String english) {
+        Word word = new Word(chinese, english);
+        wordRepository.save(word);
     }
 /*
     public List<Word> findAllByHanzi(Hanzi hanzi){

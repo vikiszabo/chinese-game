@@ -7,23 +7,24 @@ import java.util.List;
 public class Word {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     Integer id;
 
-   // @Column(name = "chinese_meaning")
+    @Column(name = "chinese_meaning")
     String chineseMeaning;
 
-//    @Column(name = "english_meaning")
+    @Column(name = "english_meaning")
     String englishMeaning;
 
+    @ManyToMany(cascade = CascadeType.ALL)
+    List<Hanzi> hanzis;
 
-  //  List<Hanzi> hanzis;
 
-
-    public Word(String chineseMeaning, String englishMeaning/*, List<Hanzi> hanzis*/) {
+    public Word(String chineseMeaning, String englishMeaning) {
         this.chineseMeaning = chineseMeaning;
         this.englishMeaning = englishMeaning;
-       // this.hanzis = hanzis;
     }
+
 
     public Integer getId() {
         return id;
@@ -32,14 +33,23 @@ public class Word {
     public void setId(Integer id) {
         this.id = id;
     }
-/*
-    public List<Hanzi> getCharacters() {
+
+    public List<Hanzi> getHanzis() {
         return hanzis;
     }
 
-    public void setCharacters(List<Hanzi> hanzis) {
+    public void setHanzis(List<Hanzi> hanzis) {
         this.hanzis = hanzis;
     }
 
-    */
+
+    @Override
+    public String toString() {
+        return "Word{" +
+                "id=" + id +
+                ", chineseMeaning='" + chineseMeaning + '\'' +
+                ", englishMeaning='" + englishMeaning + '\'' +
+                ", hanzis=" + hanzis +
+                '}';
+    }
 }

@@ -3,22 +3,29 @@ package com.chinese.words.controller;
 
 import com.chinese.words.service.ChineseAppService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpSession;
+import java.util.Map;
 
-@RestController
-@EnableAutoConfiguration
+
+@Controller
 public class HanziController {
 
     @Autowired
     private ChineseAppService chineseAppService;
 
-    @RequestMapping
-    @ResponseBody
-    String hello() {
-        return "Hello World! Spring boot is so simple.";
+    @RequestMapping("/")
+    public String welcome(Model model) {
+        model.addAttribute("hanzis", chineseAppService.listAllHanzis());
+        model.addAttribute("chinese_char", chineseAppService.getHanziById(1));
+        return "welcome";
     }
+
 
 
 
