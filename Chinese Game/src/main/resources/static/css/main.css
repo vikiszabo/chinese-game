@@ -1,7 +1,43 @@
-h1{
-	color:#0000FF;
+
+
+.starter-template {
+	color: #FF0022;
+	font-size: 2em;
+	border-style: solid;
+	border-color: #FF0022;
+	border-width: 2mm;
+	width: 40%;
+	padding: 2%;
+	position: absolute;
+	right: 2%;
+
 }
 
-h2{
-	color:#FF0000;
+
+
+nav {
+	background-color: #D1BC33;
+}
+
+.navbar-brand {
+	color: #3C0005;
+}
+
+nav li {
+	color: #3C0005;
+}
+
+
+
+body, html {
+	background: url("../img/chinese.jpg");
+
+	/* Full height */
+	height: 100%;
+	margin: 0;
+
+	/* Center and scale the image nicely */
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
 }
