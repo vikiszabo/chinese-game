@@ -12,7 +12,7 @@ import java.util.ArrayList;
 public class CharacterInitializerBean {
 
     public CharacterInitializerBean(ChineseAppService chineseAppService) throws ParseException {
-
+/*
         chineseAppService.saveHanzi("好","hao3");
         chineseAppService.saveHanzi("八", "ba1");
         chineseAppService.saveHanzi("爱", "ai4");

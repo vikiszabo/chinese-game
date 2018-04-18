@@ -44,14 +44,6 @@ public class ChineseAppService {
         return hanziRepository.findOne(id).getName();
     }
 
-    public boolean wordHasChar(Hanzi hanzi) {
-        boolean hasChar = false;
-        List<Hanzi> hanzis = wordRepository.
-        for (:
-             ) {
-
-        }
-    }
 
     public List<Word> showWordsByCharacterId(Integer id){
         List<Word> words = wordRepository.findAll();

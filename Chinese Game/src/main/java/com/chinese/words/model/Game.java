@@ -9,9 +9,8 @@ public class Game {
 
     List<Hanzi> hanzis;
 
-    List<Solution> solutions;
 
     Random random = new Random();
 
-    List<Hanzi> randomHanzis = random.nextInt();
+    List<Hanzi> randomHanzis = null;
 }

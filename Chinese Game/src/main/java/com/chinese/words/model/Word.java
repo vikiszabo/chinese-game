@@ -19,6 +19,8 @@ public class Word {
     @ManyToMany(cascade = CascadeType.ALL)
     List<Hanzi> hanzis;
 
+    public Word() {
+    }
 
     public Word(String chineseMeaning, String englishMeaning) {
         this.chineseMeaning = chineseMeaning;
@@ -51,5 +53,9 @@ public class Word {
                 ", englishMeaning='" + englishMeaning + '\'' +
                 ", hanzis=" + hanzis +
                 '}';
+    }
+
+    public String getEnglishMeaning() {
+        return englishMeaning;
     }
 }
