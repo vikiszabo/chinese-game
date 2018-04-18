@@ -7,7 +7,7 @@ import java.util.List;
 public class Word {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+   // @GeneratedValue(strategy = GenerationType.IDENTITY)
     Integer id;
 
     @Column(name = "chinese_meaning")

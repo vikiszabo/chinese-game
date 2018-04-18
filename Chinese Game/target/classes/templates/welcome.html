@@ -32,10 +32,10 @@
 <div class="container">
 
     <div class="starter-template">
-        <h1>Hanzi Wushuguan</h1>
+        <h1 class="title">Hanzi Wushuguan</h1><br />
 
         <tr class="hanzis" th:each="hanzi : ${hanzis}">
-            <td th:text="${hanzi.name}"></td>
+            <td class="chinchar" th:text="${hanzi.name}"></td>
         </tr>
     </div>
 

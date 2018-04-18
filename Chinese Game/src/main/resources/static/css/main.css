@@ -7,6 +7,7 @@
 	border-color: #FF0022;
 	border-width: 2mm;
 	width: 40%;
+	height: 80%;
 	padding: 2%;
 	position: absolute;
 	right: 2%;
@@ -34,10 +35,15 @@ body, html {
 
 	/* Full height */
 	height: 100%;
-	margin: 0;
+	width: 100%;
 
 	/* Center and scale the image nicely */
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
+
+}
+
+.chinchar {
+	font-size: 100vw;
 }
