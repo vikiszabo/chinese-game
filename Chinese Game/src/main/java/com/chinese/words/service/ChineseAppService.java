@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 @Service
@@ -46,13 +47,10 @@ public class ChineseAppService {
 
 
     public List<Word> showWordsByCharacterId(Integer id){
-        List<Word> words = wordRepository.findAll();
         Hanzi hanzi = hanziRepository.getOne(id);
-        for (Word word : words) {
 
-        }
-
-        return new ArrayList<>();
+        return hanzi.getWords();
+        //return wordRepository.findAllByHanzisIn(Arrays.asList(hanzi));
     }
 
     public int getNumberOfSolutionsByCharacterSet() {

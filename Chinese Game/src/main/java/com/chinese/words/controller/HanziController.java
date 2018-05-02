@@ -1,6 +1,7 @@
 package com.chinese.words.controller;
 
 
+import com.chinese.words.model.Word;
 import com.chinese.words.service.ChineseAppService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -10,6 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
+import java.util.List;
 import java.util.Map;
 
 
@@ -24,6 +26,13 @@ public class HanziController {
         model.addAttribute("hanzis", chineseAppService.listAllHanzis());
         model.addAttribute("chinese_char", chineseAppService.getHanziById(1));
         return "welcome";
+    }
+
+    @RequestMapping("/wordsByHanziId/{id}")
+    @ResponseBody
+    public List<Word> welcome(Model model, @PathVariable Integer id) {
+        List<Word> words = chineseAppService.showWordsByCharacterId(id);
+        return words;
     }
 
 
