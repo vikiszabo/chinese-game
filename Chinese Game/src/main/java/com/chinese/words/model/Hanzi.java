@@ -4,7 +4,9 @@ package com.chinese.words.model;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 @Entity
 @Table(name = "hanzi")
@@ -12,15 +14,17 @@ import java.util.List;
 public class Hanzi {
 
     @Id
-   // @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Integer id;
+    @GeneratedValue
+    @Column(name="hanzi_id")
+    private Integer id;
 
-    String name;
+    @Column(unique = true)
+    private String name;
 
-    String pinyin;
+    private String pinyin;
 
-    @ManyToMany(mappedBy = "hanzis")
-    List<Word> words;
+    @ManyToMany(mappedBy = "hanzis", fetch = FetchType.EAGER)
+    private List<Word> words = new ArrayList<>();
 
     public Hanzi(){};
 
@@ -60,6 +64,20 @@ public class Hanzi {
 
     public void setPinyin(String pinyin) {
         this.pinyin = pinyin;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Hanzi hanzi = (Hanzi) o;
+        return Objects.equals(name, hanzi.name);
+    }
+
+    @Override
+    public int hashCode() {
+
+        return Objects.hash(name);
     }
 
     @Override

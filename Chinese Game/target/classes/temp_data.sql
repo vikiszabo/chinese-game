@@ -350,7 +350,6 @@ INSERT INTO word_hanzis (words_id, hanzis_id) VALUES
 (3, 3),
 (4, 2),
 (5, 4),
-(5, 4),
 (6, 5),
 (6, 6),
 (7, 7),

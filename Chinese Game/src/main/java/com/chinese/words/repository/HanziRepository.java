@@ -11,5 +11,5 @@ public interface HanziRepository extends JpaRepository<Hanzi, Integer> {
 
 //    List<Hanzi> findAllByWord(Word word);
 
-
+    Hanzi findByName(String name);
 }

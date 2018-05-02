@@ -3,24 +3,30 @@ package com.chinese.words.model;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Entity
-@JsonIgnoreProperties(value = { "hanzis" })
+//@JsonIgnoreProperties(value = { "hanzis" })
 public class Word {
 
     @Id
-   // @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Integer id;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name="word_id")
+    private Integer id;
 
     @Column(name = "chinese_meaning")
-    String chineseMeaning;
+    private String chineseMeaning;
 
     @Column(name = "english_meaning")
-    String englishMeaning;
+    private String englishMeaning;
 
-    @ManyToMany(cascade = CascadeType.ALL)
-    List<Hanzi> hanzis;
+    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    //@JoinTable(name = "word_hanzi", joinColumns = {@JoinColumn(name = "word_id", referencedColumnName = "word_id")},
+    //inverseJoinColumns = {@JoinColumn(name = "hanzi_id", referencedColumnName = "hanzi_id")})
+    private Set<Hanzi> hanzis = new HashSet<>();
 
     public Word() {
     }
@@ -39,12 +45,33 @@ public class Word {
         this.id = id;
     }
 
-    public List<Hanzi> getHanzis() {
+    public Set<Hanzi> getHanzis() {
         return hanzis;
     }
 
-    public void setHanzis(List<Hanzi> hanzis) {
+    public void setHanzis(Set<Hanzi> hanzis) {
         this.hanzis = hanzis;
+    }
+
+    public String getEnglishMeaning() {
+        return englishMeaning;
+    }
+
+    public String getChineseMeaning() {
+        return chineseMeaning;
+    }
+
+    public void setChineseMeaning(String chineseMeaning) {
+        this.chineseMeaning = chineseMeaning;
+    }
+
+    public void setEnglishMeaning(String englishMeaning) {
+        this.englishMeaning = englishMeaning;
+    }
+
+    public void addHanzi(Hanzi hanzi){
+        this.hanzis.add(hanzi);
+        hanzi.getWords().add(this);
     }
 
 
@@ -56,13 +83,5 @@ public class Word {
                 ", englishMeaning='" + englishMeaning + '\'' +
                 ", hanzis=" + hanzis +
                 '}';
-    }
-
-    public String getEnglishMeaning() {
-        return englishMeaning;
-    }
-
-    public String getChineseMeaning() {
-        return chineseMeaning;
     }
 }
