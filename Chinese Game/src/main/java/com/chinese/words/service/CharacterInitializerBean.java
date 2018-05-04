@@ -4,16 +4,13 @@ import com.chinese.words.model.Hanzi;
 import com.chinese.words.model.Word;
 import com.chinese.words.repository.HanziRepository;
 import com.chinese.words.repository.WordRepository;
+import com.github.pffy.chinese.HanyuPinyin;
+import com.github.pffy.chinese.Tone;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
-import com.github.pffy.chinese.HanyuPinyin;
-import com.github.pffy.chinese.Tone;
+
 import java.text.ParseException;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
 
 @Component
 public class CharacterInitializerBean {
@@ -187,13 +184,13 @@ public class CharacterInitializerBean {
                 Hanzi oldHanzi = hanziRepository.findByName(hanzi);
 
                 if(oldHanzi != null){
-                    log.info("already exists: " + hanzi);
+                 //   log.info("already exists: " + hanzi);
                     word.addHanzi(oldHanzi);
                 }
                 else {
                     hanyuPinyin.setInput(hanzi);
                     Hanzi currentHanzi = new Hanzi(hanzi, hanyuPinyin.toString());
-                    log.info("creating new hanzi: " + hanzi);
+                 //   log.info("creating new hanzi: " + hanzi);
                     word.addHanzi(currentHanzi);
                 }
 

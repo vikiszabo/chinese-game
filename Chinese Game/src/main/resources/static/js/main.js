@@ -2,9 +2,9 @@ function showWordsPopup(hanziId) {
     var popup = document.getElementById("myPopup");
 
     $.getJSON('/wordsByHanziId/' + hanziId, function (data) {
-        let popupText = 'words: ';
+        let popupText = 'Words: ';
         $.each(data, function (key, val) {
-            popupText += val.chineseMeaning + ' '
+            popupText += val.chineseMeaning + ' - ' + val.englishMeaning + ' '
         })
         $(popup).text(popupText);
         popup.classList.toggle("show");

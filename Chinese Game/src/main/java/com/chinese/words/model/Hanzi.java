@@ -26,7 +26,7 @@ public class Hanzi {
     @ManyToMany(mappedBy = "hanzis", fetch = FetchType.EAGER)
     private List<Word> words = new ArrayList<>();
 
-    public Hanzi(){};
+    public Hanzi(){}
 
     public Hanzi(String name, String pinyin) {
         this.name = name;
