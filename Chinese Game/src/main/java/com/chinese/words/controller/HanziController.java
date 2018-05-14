@@ -34,8 +34,26 @@ public class HanziController {
         return words;
     }
 
+    @GetMapping("/sign-up")
+    public String signUp() {
+        return "/sign-up";
+    }
 
+    @GetMapping("/login")
+    public String login() {
+        return "/login";
+    }
 
+    @GetMapping("/howtoplay")
+    public String howToPlay() {
+        return "/howtoplay";
+    }
+
+    @GetMapping("hanzireference")
+    public String hanziReference(Model model) {
+        model.addAttribute("hanzis", chineseAppService.listAllHanzis());
+        return "/hanzireference";
+    }
 
 
 }

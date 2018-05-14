@@ -53,6 +53,8 @@ body, html {
 	display: inline-block;
 }
 
+.form-control { display: inline-block !important; }
+
 /* Popup container - can be anything you want */
 .popup {
 	position: fixed;

@@ -7,25 +7,6 @@
 <div th:replace="nav :: copy"></div>
 <br/>
 
-<div class="container">
-
-    <div class="starter-template">
-        <h1 id="boxtitle" class="title">Hanzi Wushuguan</h1><br />
-
-        <div class="hanzis">
-            <th:block th:each="hanzi : ${hanzis}">
-                <div class="chinchar" th:text="${hanzi.name}" th:attr="data-id=${hanzi.id}"></div>
-            </th:block>
-        </div>
-    </div>
-
-
-</div>
-
-<div class="popup">
-    <p class="popuptext" id="myPopup"></p>
-</div>
-
 <!-- include javascript in the footer -->
 <script type="text/javascript" th:src="@{/webjars/jquery/3.2.1/jquery.min.js/}"></script>
 <script type="text/javascript" th:src="@{/webjars/bootstrap/3.3.7/js/bootstrap.min.js}"></script>
