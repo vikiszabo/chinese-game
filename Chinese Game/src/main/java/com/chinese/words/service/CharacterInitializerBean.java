@@ -206,12 +206,7 @@ public class CharacterInitializerBean {
         chineseAppService.saveHanzi("子", "zi"));
         chineseAppService.saveHanzi("北", "bei3"));
         chineseAppService.saveHanzi("京", "jing1"));
-
-
-
         chineseAppService.saveWord("你好", "hi"));
-
-
         chineseAppService.saveHanzi("本", "ben3"));
         chineseAppService.saveHanzi("不", "bu4"));
         chineseAppService.saveHanzi("客", "ke4"));

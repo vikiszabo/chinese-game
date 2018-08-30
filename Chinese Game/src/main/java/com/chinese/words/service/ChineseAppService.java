@@ -50,15 +50,8 @@ public class ChineseAppService {
         Hanzi hanzi = hanziRepository.getOne(id);
 
         return hanzi.getWords();
-        //return wordRepository.findAllByHanzisIn(Arrays.asList(hanzi));
     }
 
-    public int getNumberOfSolutionsByCharacterSet() {
-        return 2;
-    }
 
-    public void getSolutionsByCharacterSet() {
-
-    }
 
 }
