@@ -13,5 +13,11 @@
       <jdbc-driver>org.h2.Driver</jdbc-driver>
       <jdbc-url>jdbc:h2:mem:</jdbc-url>
     </data-source>
+    <data-source source="LOCAL" name="chinese" uuid="8db4fdc7-2314-48f3-baba-cd4465f1d7c0">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:5432/chinese_game</jdbc-url>
+    </data-source>
   </component>
 </project>
