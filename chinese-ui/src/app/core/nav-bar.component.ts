@@ -4,8 +4,8 @@ import { UserRepositoryService } from "./user-repository.service";
 
 @Component({
   selector: 'wp-nav-bar',
-  styleUrls: [`./nav-bar.component.css`],
-  templateUrl: '.wp-nav-bar.component.html'
+  styleUrls: ['./nav-bar.component.css'],
+  templateUrl: './nav-bar.component.html'
 })
 
 export class NavBarComponent  {

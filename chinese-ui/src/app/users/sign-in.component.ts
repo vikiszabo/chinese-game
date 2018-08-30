@@ -5,7 +5,7 @@ import { UserRepositoryService } from '../core/user-repository.service'
 
 @Component({
   styleUrls: ['./sign-in.component.css'],
-  templateUrl: '.sign-in.component.html'
+  templateUrl: './sign-in.component.html'
 })
 export class SignInComponent {
   credentials: any = {};

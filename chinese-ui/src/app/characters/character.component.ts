@@ -4,8 +4,8 @@ import { UserRepositoryService } from '../core/user-repository.service'
 
 
 @Component({
-  styleUrls: ['.character.component.css'],
-  templateUrl:  '.character.component.html'
+  styleUrls: ['./character.component.css'],
+  templateUrl:  './character.component.html'
 })
 
 export class CharacterComponent {}

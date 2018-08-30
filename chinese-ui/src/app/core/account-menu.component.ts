@@ -3,13 +3,13 @@ import {Component, EventEmitter, Input, Output} from '@angular/core';
 
 @Component({
   selector: 'account-menu',
-  styleUrls: ['.account-menu.component.css'],
-  templateUrl: '.account-menu.component.html'
+  styleUrls: ['./account-menu.component.css'],
+  templateUrl: './account-menu.component.html'
 })
 
 export class AccountMenuComponent {
   @Input() user;
-  @Output() signedOut: EventEmitter<any> = EventEmitter<any>();
+  @Output() signedOut: EventEmitter<any> = new EventEmitter<any>();
   showMenu: boolean
 
   signOut() {

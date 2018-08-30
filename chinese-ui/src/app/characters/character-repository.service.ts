@@ -8,9 +8,6 @@ export class CharacterRepositoryService {
 
   constructor(private userRepository: UserRepositoryService) {}
 
-  getWords(): Observable<any[]> {
-  }
-
 }
 
 const characters = [{
