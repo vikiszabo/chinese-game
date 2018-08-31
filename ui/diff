@@ -1,0 +1,151 @@
+diff --cc chinese-ui/src/index.html
+index 3179837,6ddd2f1..0000000
+--- a/chinese-ui/src/index.html
++++ b/chinese-ui/src/index.html
+@@@ -7,31 -7,14 +7,11 @@@
+  
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+ +
+  </head>
+ +
+  <body>
+- <div>
+-   <nav class="navbar navbar-light">
+-     <div class="container">
+-       <div class="navbar-header">
+-         <a class="navbar-brand" href="#">汉字无数管</a>
+-       </div>
+-       <div id="navbar" class="collapse navbar-collapse">
+-         <ul class="nav navbar-nav">
+-           <li class="active"><a href="/howtoplay">How to play?</a></li>
+-           <li class="rules"><a href="/hanzireference">Reference to play</a></li>
+- 
+-           <li class="nav-item text-right"><a  href="/sign-up">Sign Up</a></li>
+-           <li class="nav-item text-right"><a  href="/login">Login</a></li>
+-         </ul>
+-       </div>
+- 
+-     </div>
+-   </nav>
+- </div>
+- 
+-   <app>Loading...</app>
+ -  <div class="nav-bar">
+ -    <img class="logo" src="/assets/images/chinese2.png" alt="Chinese Logo" />
+ -    <div class="nav-item"><a [routerLink]="['/characters']">Characters</a></div>
+ -    <account-menu [user]="currentUser" (signedOut)="handleSignOut()"></account-menu>
+ -  </div>
++   <my-app>Loading...</my-app>
+    <router-outlet></router-outlet>
+  </body>
+  </html>
+diff --git a/Chinese Game/src/main/java/com/chinese/words/controller/CharsController.java b/Chinese Game/src/main/java/com/chinese/words/controller/CharsController.java
+index a998f31..e88b6d7 100644
+--- a/Chinese Game/src/main/java/com/chinese/words/controller/CharsController.java	
++++ b/Chinese Game/src/main/java/com/chinese/words/controller/CharsController.java	
+@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
+ import java.util.List;
+ 
+ @RestController
++@CrossOrigin("*")
+ @RequestMapping("/api/v1/chars")
+ public class CharsController {
+ 
+diff --git a/Chinese Game/target/classes/com/chinese/words/controller/CharsController.class b/Chinese Game/target/classes/com/chinese/words/controller/CharsController.class
+index 8e1e6a9..fc7802f 100644
+Binary files a/Chinese Game/target/classes/com/chinese/words/controller/CharsController.class and b/Chinese Game/target/classes/com/chinese/words/controller/CharsController.class differ
+diff --git a/Chinese Game/target/classes/com/chinese/words/model/Admin.class b/Chinese Game/target/classes/com/chinese/words/model/Admin.class
+deleted file mode 100644
+index 5e474e0..0000000
+Binary files a/Chinese Game/target/classes/com/chinese/words/model/Admin.class and /dev/null differ
+diff --git a/Chinese Game/target/classes/com/chinese/words/model/Game.class b/Chinese Game/target/classes/com/chinese/words/model/Game.class
+deleted file mode 100644
+index 9b9ea6b..0000000
+Binary files a/Chinese Game/target/classes/com/chinese/words/model/Game.class and /dev/null differ
+diff --git a/Chinese Game/target/classes/com/chinese/words/model/Player.class b/Chinese Game/target/classes/com/chinese/words/model/Player.class
+deleted file mode 100644
+index ac8a643..0000000
+Binary files a/Chinese Game/target/classes/com/chinese/words/model/Player.class and /dev/null differ
+diff --git a/Chinese Game/target/classes/com/chinese/words/service/HanziService.class b/Chinese Game/target/classes/com/chinese/words/service/HanziService.class
+deleted file mode 100644
+index 1fc3e21..0000000
+Binary files a/Chinese Game/target/classes/com/chinese/words/service/HanziService.class and /dev/null differ
+diff --git a/Chinese Game/target/classes/com/chinese/words/service/WordService.class b/Chinese Game/target/classes/com/chinese/words/service/WordService.class
+deleted file mode 100644
+index 4c10815..0000000
+Binary files a/Chinese Game/target/classes/com/chinese/words/service/WordService.class and /dev/null differ
+diff --git a/chinese-ui/src/app/app.module.ts b/chinese-ui/src/app/app.module.ts
+index 1d3c33d..af3aafd 100644
+--- a/chinese-ui/src/app/app.module.ts
++++ b/chinese-ui/src/app/app.module.ts
+@@ -1,11 +1,10 @@
+ import { BrowserModule } from '@angular/platform-browser';
+ import { NgModule } from '@angular/core';
+-import { RouterModule } from '@angular/router';
+ import { HttpClientModule } from '@angular/common/http';
+ import { AppComponent } from './app.component';
+ import {CoreModule} from './core/core.module';
+ import {CharacterModule} from './characters/character.module';
+-import {SignInComponent} from './users/sign-in.component';
++//import {SignInComponent} from './users/sign-in.component';
+ 
+ import { CharacterService } from './services/character.service';
+ import { AdminComponent } from './components/admin/admin.component';
+@@ -15,7 +14,7 @@ import { ReactiveFormsModule} from '@angular/forms';
+ @NgModule({
+   declarations: [
+     AppComponent,
+-    SignInComponent,
++ //   SignInComponent,
+     AdminComponent,
+     HomeComponent
+   ],
+diff --git a/chinese-ui/src/app/characters/character.component.html b/chinese-ui/src/app/characters/character.component.html
+index e69de29..ce14e05 100644
+--- a/chinese-ui/src/app/characters/character.component.html
++++ b/chinese-ui/src/app/characters/character.component.html
+@@ -0,0 +1 @@
++kkkkk
+diff --git a/chinese-ui/src/app/core/core.module.ts b/chinese-ui/src/app/core/core.module.ts
+index 042121e..0162a05 100644
+--- a/chinese-ui/src/app/core/core.module.ts
++++ b/chinese-ui/src/app/core/core.module.ts
+@@ -2,12 +2,21 @@ import { NgModule } from '@angular/core';
+ import { CommonModule } from '@angular/common';
+ import { NavBarComponent } from './nav-bar.component';
+ 
+-import { RouterModule } from '@angular/router';
++import {RouterModule, Routes} from '@angular/router';
+ import {UserRepositoryService} from './user-repository.service';
+ import {AccountMenuComponent} from './account-menu.component';
++import {CharacterComponent} from "../characters/character.component";
++import {HomeComponent} from "../components/home/home.component";
++import {AdminComponent} from "../components/admin/admin.component";
++
++const routes: Routes = [
++  {path: '', component: HomeComponent},
++  {path: 'admin', component: AdminComponent},
++  {path: 'characters', component: CharacterComponent},
++]
+ 
+ @NgModule({
+-  imports: [ CommonModule, RouterModule ],
++  imports: [ CommonModule, RouterModule.forRoot(routes) ],
+   exports: [ NavBarComponent, AccountMenuComponent ],
+   declarations: [ NavBarComponent, AccountMenuComponent ],
+   providers: [UserRepositoryService]
+diff --git a/chinese-ui/src/app/core/nav-bar.component.html b/chinese-ui/src/app/core/nav-bar.component.html
+index 5e43dfc..2e682f3 100644
+--- a/chinese-ui/src/app/core/nav-bar.component.html
++++ b/chinese-ui/src/app/core/nav-bar.component.html
+@@ -6,6 +6,9 @@
+       </div>
+       <div id="navbar" class="collapse navbar-collapse">
+         <ul class="nav navbar-nav">
++          <li class="active"><a routerLink="">Home</a></li>
++          <li class="active"><a routerLink="characters">Characters</a></li>
++          <li class="active"><a routerLink="admin">Admin</a></li>
+           <li class="active"><a href="/howtoplay">How to play?</a></li>
+           <li class="rules"><a href="/hanzireference">Reference to play</a></li>
+ 

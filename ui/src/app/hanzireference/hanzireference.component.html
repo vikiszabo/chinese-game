@@ -1,0 +1,14 @@
+<div class="starter-template">
+  <h1 id="boxtitle" class="title">Hanzi Wushuguan</h1><br/>
+  <div class="hanzis" *ngIf="hanziList">
+    <div class="chinchar" attr.data-id="{{ hanzi.id}}"
+         *ngFor="let hanzi of hanziList"
+    onclick="showWordsPopup(hanzi.id)">
+      {{ hanzi.name }}
+    </div>
+  </div>
+</div>
+
+<div class="popup">
+  <p class="popuptext" id="myPopup"></p>
+</div>
