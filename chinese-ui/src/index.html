@@ -2,18 +2,35 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Chinese Word-Building Game</title>
+  <title>Hanzi Wushuguan - Chinese Word-Building Game</title>
   <base href="/">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+
 </head>
+
 <body>
-  <div class="nav-bar">
-    <img class="logo" src="/assets/images/chinese2.png" alt="Chinese Logo" />
-    <div class="nav-item"><a [routerLink]="['/characters']">Characters</a></div>
-    <account-menu [user]="currentUser" (signedOut)="handleSignOut()"></account-menu>
-  </div>
+<div>
+  <nav class="navbar navbar-light">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">汉字无数管</a>
+      </div>
+      <div id="navbar" class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="/howtoplay">How to play?</a></li>
+          <li class="rules"><a href="/hanzireference">Reference to play</a></li>
+
+          <li class="nav-item text-right"><a  href="/sign-up">Sign Up</a></li>
+          <li class="nav-item text-right"><a  href="/login">Login</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </nav>
+</div>
+
   <app>Loading...</app>
   <router-outlet></router-outlet>
 </body>
