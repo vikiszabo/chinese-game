@@ -14,6 +14,7 @@
     <div class="nav-item"><a [routerLink]="['/characters']">Characters</a></div>
     <account-menu [user]="currentUser" (signedOut)="handleSignOut()"></account-menu>
   </div>
-  <my-app>Loading...</my-app>
+  <app>Loading...</app>
+  <router-outlet></router-outlet>
 </body>
 </html>

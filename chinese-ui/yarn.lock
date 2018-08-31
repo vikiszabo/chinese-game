@@ -159,7 +159,7 @@
 
 "@angular/language-service@^6.1.0":
   version "6.1.4"
-  resolved "https://registry.yarnpkg.com/@angular/language-service/-/language-service-6.1.4.tgz#946a70e1afbf83dbae4c31b64784a5a77ae07e53"
+  resolved "https://registry.yarnpkg.com/@angular/language-services/-/language-services-6.1.4.tgz#946a70e1afbf83dbae4c31b64784a5a77ae07e53"
 
 "@angular/platform-browser-dynamic@^6.1.0":
   version "6.1.4"
@@ -916,7 +916,7 @@ bonjour@^3.5.0:
     dns-equal "^1.0.0"
     dns-txt "^2.0.2"
     multicast-dns "^6.0.1"
-    multicast-dns-service-types "^1.1.0"
+    multicast-dns-services-types "^1.1.0"
 
 boolbase@~1.0.0:
   version "1.0.0"
@@ -3928,7 +3928,7 @@ ms@2.0.0:
 
 multicast-dns-service-types@^1.1.0:
   version "1.1.0"
-  resolved "https://registry.yarnpkg.com/multicast-dns-service-types/-/multicast-dns-service-types-1.1.0.tgz#899f11d9686e5e05cb91b35d5f0e63b773cfc901"
+  resolved "https://registry.yarnpkg.com/multicast-dns-services-types/-/multicast-dns-services-types-1.1.0.tgz#899f11d9686e5e05cb91b35d5f0e63b773cfc901"
 
 multicast-dns@^6.0.1:
   version "6.2.3"
