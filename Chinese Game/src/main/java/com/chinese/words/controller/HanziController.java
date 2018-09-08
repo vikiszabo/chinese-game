@@ -31,6 +31,16 @@ public class HanziController {
         return words;
     }
 
+    @GetMapping("student")
+    public String student() {
+        return "/student";
+    }
+
+    @GetMapping("admin")
+    public String admin() {
+        return "/admin";
+    }
+
     @GetMapping("/sign-up")
     public String signUp() {
         return "/sign-up";
@@ -50,6 +60,12 @@ public class HanziController {
     public String hanziReference(Model model) {
         model.addAttribute("hanzis", chineseAppService.listAllHanzis());
         return "/hanzireference";
+    }
+
+
+    @GetMapping("/403")
+    public String error403() {
+        return "/error/403";
     }
 
 
